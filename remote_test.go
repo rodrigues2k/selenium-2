@@ -40,6 +40,7 @@ func newRemote(testName string, t *testing.T) WebDriver {
 }
 
 func TestStatus(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestStatus", t)
 	defer wd.Quit()
 
@@ -54,6 +55,7 @@ func TestStatus(t *testing.T) {
 }
 
 func TestNewSession(t *testing.T) {
+	t.Parallel()
 	wd := &remoteWD{capabilities: getCaps(), executor: DEFAULT_EXECUTOR}
 	sid, err := wd.NewSession()
 	defer wd.Quit()
@@ -72,6 +74,7 @@ func TestNewSession(t *testing.T) {
 }
 
 func TestCapabilities(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestCapabilities", t)
 	defer wd.Quit()
 
@@ -88,6 +91,7 @@ func TestCapabilities(t *testing.T) {
 }
 
 func TestSetAsyncScriptTimeout(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestSetAsyncScriptTimeout", t)
 	defer wd.Quit()
 
@@ -98,6 +102,7 @@ func TestSetAsyncScriptTimeout(t *testing.T) {
 }
 
 func TestSetImplicitWaitTimeout(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestSetImplicitWaitTimeout", t)
 	defer wd.Quit()
 
@@ -108,6 +113,7 @@ func TestSetImplicitWaitTimeout(t *testing.T) {
 }
 
 func TestCurrentWindowHandle(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestCurrentWindowHandle", t)
 	defer wd.Quit()
 
@@ -123,6 +129,7 @@ func TestCurrentWindowHandle(t *testing.T) {
 }
 
 func TestWindowHandles(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestWindowHandles", t)
 	defer wd.Quit()
 
@@ -137,6 +144,7 @@ func TestWindowHandles(t *testing.T) {
 }
 
 func TestGet(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestGet", t)
 	defer wd.Quit()
 
@@ -156,6 +164,7 @@ func TestGet(t *testing.T) {
 }
 
 func TestNavigation(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestNavigation", t)
 	defer wd.Quit()
 
@@ -199,6 +208,7 @@ func TestNavigation(t *testing.T) {
 }
 
 func TestTitle(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestTitle", t)
 	defer wd.Quit()
 
@@ -216,6 +226,7 @@ func TestTitle(t *testing.T) {
 }
 
 func TestPageSource(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestPageSource", t)
 	defer wd.Quit()
 
@@ -235,6 +246,7 @@ func TestPageSource(t *testing.T) {
 }
 
 func TestFindElement(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestFindElement", t)
 	defer wd.Quit()
 
@@ -259,6 +271,7 @@ func TestFindElement(t *testing.T) {
 }
 
 func TestFindElements(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestFindElements", t)
 	defer wd.Quit()
 
@@ -287,6 +300,7 @@ func TestFindElements(t *testing.T) {
 }
 
 func TestSendKeys(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestSendKeys", t)
 	defer wd.Quit()
 
@@ -316,6 +330,7 @@ func TestSendKeys(t *testing.T) {
 }
 
 func TestClick(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestClick", t)
 	defer wd.Quit()
 
@@ -349,6 +364,7 @@ func TestClick(t *testing.T) {
 }
 
 func TestGetCookies(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestGetCookies", t)
 	defer wd.Quit()
 
@@ -368,6 +384,7 @@ func TestGetCookies(t *testing.T) {
 }
 
 func TestAddCookie(t *testing.T) {
+	t.Parallel()
 	if isHtmlUnit() {
 		t.Log("Skipping on htmlunit")
 		return
@@ -396,6 +413,7 @@ func TestAddCookie(t *testing.T) {
 }
 
 func TestDeleteCookie(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestDeleteCookie", t)
 	defer wd.Quit()
 
@@ -427,6 +445,7 @@ func TestDeleteCookie(t *testing.T) {
 }
 
 func TestLocation(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestLocation", t)
 	defer wd.Quit()
 
@@ -447,6 +466,7 @@ func TestLocation(t *testing.T) {
 }
 
 func TestLocationInView(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestLocationInView", t)
 	defer wd.Quit()
 
@@ -467,6 +487,7 @@ func TestLocationInView(t *testing.T) {
 }
 
 func TestSize(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestSize", t)
 	defer wd.Quit()
 
@@ -487,6 +508,7 @@ func TestSize(t *testing.T) {
 }
 
 func TestExecuteScript(t *testing.T) {
+	t.Parallel()
 	if isHtmlUnit() {
 		t.Log("Skipping on htmlunit")
 		return
@@ -512,6 +534,7 @@ func TestExecuteScript(t *testing.T) {
 }
 
 func TestScreenshot(t *testing.T) {
+	t.Parallel()
 	if isHtmlUnit() {
 		t.Log("Skipping on htmlunit")
 		return
@@ -531,6 +554,7 @@ func TestScreenshot(t *testing.T) {
 }
 
 func TestIsSelected(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestIsSelected", t)
 	defer wd.Quit()
 
@@ -564,6 +588,7 @@ func TestIsSelected(t *testing.T) {
 }
 
 func TestIsDisplayed(t *testing.T) {
+	t.Parallel()
 	wd := newRemote("TestIsDisplayed", t)
 	defer wd.Quit()
 
